@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/dashboard.css') }}">
+</head>
+<body>
+{% block content %}
+  <h1>Welcome to the DSICOOP, {{ user[1] }}!</h1>
+{% endblock %}
+	<header>
+		<h1>SUMMARY</h1>
+	</header>
+	<main>
+		<div class="container">
+			<div class="box box1">
+			  <i class="icon fa fa-gpax"></i>
+			  <h2 class="GPAX">3.62</h2>
+			  <script>
+				// Get the GPAX element
+				var gpaxElement = document.querySelector(".GPAX");
+		  
+				// Generate random GPAX value between 1 and 4
+				var randomGPAX = 3.63;
+		  
+				// Define the update interval for GPAX
+				var updateIntervalGPAX = 2; // in milliseconds
+		  
+				// Display the running GPAX value
+				var currentGPAX = 0;
+				var intervalIdGPAX = setInterval(function() {
+				  currentGPAX += 0.01;
+				  gpaxElement.innerHTML = currentGPAX.toFixed(2);
+				  if (currentGPAX >= randomGPAX) {
+					clearInterval(intervalIdGPAX);
+					setTimeout(function() {
+					  gpaxElement.innerHTML = randomGPAX.toFixed(2);
+					}, 0);
+				  }
+				}, updateIntervalGPAX);
+			  </script>
+			  <p>GPAX</p>
+			</div>
+			<div class="box box2">
+			  <i class="icon fa fa-shopping-cart"></i>
+			  <h2>NATTHAPAT TANTAKSINANUKIJ</h2>
+			  <p>INFORMATION</p>
+			</div>
+			<div class="box box3">
+			  <i class="icon fa fa-thumbs-up"></i>
+			  <h2 class="JOB">0</h2>
+			  <p>TOTAL MATCHED JOBS</p>
+			</div>
+		  </div>
+		  
+		  
+	</main>
+<form action="/logout">
+		<input type="submit" value="LOG OUT" />
+</form>
+</body>
+</html>
+

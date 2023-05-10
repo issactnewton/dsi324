@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LOGIN</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/login.css') }}">
+</head>
+<body>
+  <form method="POST" action="/login">
+    <img src="{{ url_for('static', filename='images/cistu.jpg') }}" class="image"/>
+    <h1 style="text-align:center; color: #000000; font-family: 'Kanit';"></h1>
+    <label for = 'username'>USERNAME</label>
+    <input type="text" name="username" required>
+    <label for="password">PASSWORD</label>
+    <input type="password" name="password" required>
+    <input type="submit" value="ENTER" style="text-align:center;">
+  </form>
+    
+  <p>©2023 กลุ่มระบบสหกิจ</p>
+</body>
+</html>
